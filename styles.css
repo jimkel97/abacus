@@ -43,7 +43,7 @@ body {
     background: linear-gradient(
             var(--direction),
             #C1986B, #B28B5C, #A37C4D, #D0A97A);
-    outline: 1px solid #6e6e6e;
+    outline: 1px solid #5c5c5c;
     position: relative;
 }
 
@@ -127,6 +127,7 @@ body {
     );
     /* background-color: blue; */
     align-items: center;
+    filter: drop-shadow(0px 0px 1px black);
     padding: 0 3px;
     max-height: 125px;
 }
