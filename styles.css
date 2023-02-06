@@ -37,8 +37,8 @@ body {
 }
 
 .support {
-    width: 25px;
-    border-radius: 100px 100px 75px 75px;
+    width: 35px;
+    border-radius: 100px 100px 5px 5px;
     height: 550px;
     background: linear-gradient(
             var(--direction),
@@ -49,13 +49,13 @@ body {
 .support:before {
     content: "";
     position: absolute;
-    width: 30px;
-    height: 40px;
-    bottom: 0;
-    left: 50%;
+    width: 25px;
+    height: 50px;
+    bottom: 2px;
+    left: 86%;
     transform: skew(-40deg, 10deg);
     z-index: -1;
-    border-radius: 50%;
+    border-radius: 100px 100px 5px 5px;
     background-color: rgba(0, 0, 0, 0.5);
     filter: blur(2px);
 }
