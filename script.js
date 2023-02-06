@@ -1,3 +1,11 @@
+/*This code is for a bead game. It sets up an HTML page to control the behavior of a bead game by adding a number of event listeners to each bead element on the page.
+
+The code first selects all elements with the class "pole" and creates an array "actives" with the length of the number of poles. Then, it iterates over each pole, selecting all elements with the class "bead". For each bead, it sets two attributes: "pole-num" and "bead-num" using the index of the pole and bead in their respective arrays.
+
+A click event listener is then added to each bead element. When a bead is clicked, its "pole-num" and "bead-num" attributes are used to update the "actives" array. The "actives" array stores the values of the active beads.
+
+The "addActives" function is then called to update the display of the game based on the values in the "actives" array. This function first removes the "active" class from all bead elements, then calculates the total by adding up the values in the "actives" array. For each active bead, the function finds the bead with the corresponding "pole-num" and "bead-num" attributes and adds the "active" class to it. Finally, the function updates the innerHTML of the element with an id of "total" with the calculated total value.*/
+
 const poles = document.querySelectorAll(".pole");
 const actives = new Array(poles.length);
 
