@@ -43,6 +43,7 @@ body {
     background: linear-gradient(
             var(--direction),
             #C1986B, #B28B5C, #A37C4D, #D0A97A);
+    outline: 1px solid #6e6e6e;
     position: relative;
 }
 
@@ -63,8 +64,12 @@ body {
 #poles {
     display: flex;
     flex-direction: column;
+    /*
     height: 500px;
     width: 500px;
+    */
+    height: 50vh;
+    width: 50vw;
 }
 
 .pole:nth-child(1) {
@@ -139,6 +144,7 @@ body {
     border-radius: 20%;
     box-shadow: inset 0 -10px 10px -10px #000000,
     inset 0 0 2px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 0px 1px black);
     margin-left: 0;
     transition: margin 500ms;
 }
