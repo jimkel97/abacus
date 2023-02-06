@@ -64,11 +64,12 @@ body {
 #poles {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     /*
     height: 500px;
     width: 500px;
     */
-    height: 50vh;
+    height: 52vh;
     width: 50vw;
 }
 
