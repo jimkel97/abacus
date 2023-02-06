@@ -1,40 +1,70 @@
-/*This code is for a bead game. It sets up an HTML page to control the behavior of a bead game by adding a number of event listeners to each bead element on the page.
+/*
+Listens to the "click" event on elements with class "bead". The code initializes two variables:
 
-The code first selects all elements with the class "pole" and creates an array "actives" with the length of the number of poles. Then, it iterates over each pole, selecting all elements with the class "bead". For each bead, it sets two attributes: "pole-num" and "bead-num" using the index of the pole and bead in their respective arrays.
+- poles is an array of all elements with class "pole" in the HTML document.
+- actives is an array with poles.length zeros.
 
-A click event listener is then added to each bead element. When a bead is clicked, its "pole-num" and "bead-num" attributes are used to update the "actives" array. The "actives" array stores the values of the active beads.
+For each element in poles, it selects all elements with class "bead" and sets two data attributes on each bead, data-pole-num and data-bead-num. It also sets a click event listener on each bead that updates the corresponding value in the actives array and calls the addActives function.
 
-The "addActives" function is then called to update the display of the game based on the values in the "actives" array. This function first removes the "active" class from all bead elements, then calculates the total by adding up the values in the "actives" array. For each active bead, the function finds the bead with the corresponding "pole-num" and "bead-num" attributes and adds the "active" class to it. Finally, the function updates the innerHTML of the element with an id of "total" with the calculated total value.*/
+The addActives function removes the "active" class from all beads with class "bead active". Then, it updates the value of the element with id "total" by computing a number based on the actives array and adding the "active" class to the beads that are associated with the non-zero values in actives.
+*/
 
+// Select all elements with class "pole" and store them in the "poles" constant
 const poles = document.querySelectorAll(".pole");
+
+// Create an array of length equal to the number of "pole" elements, filled with 0's, and store it in the "actives" constant
 const actives = Array(poles.length).fill(0);
 
+// Loop through each "pole" element
 poles.forEach((pole, poleIndex) => {
+    // Select all elements with class "bead" inside the current "pole" element
     const beads = pole.querySelectorAll(".bead");
 
+    // Loop through each "bead" element
     beads.forEach((bead, beadIndex) => {
+        // Set the "data-pole-num" attribute of the current "bead" element to the inverted index of its parent "pole" element
         bead.setAttribute("data-pole-num", poles.length - poleIndex - 1);
+
+        // Set the "data-bead-num" attribute of the current "bead" element to the inverted index of itself within the "beads" array
         bead.setAttribute("data-bead-num", beads.length - beadIndex);
+
+        // Add a click event listener to the current "bead" element
         bead.addEventListener("click", () => {
+            // Retrieve the values of the "data-pole-num" and "data-bead-num" attributes of the clicked "bead" element
             const polePos = +bead.getAttribute("data-pole-num");
             const beadPos = +bead.getAttribute("data-bead-num");
+
+            // Update the value in the "actives" array at the position specified by "polePos"
             actives[polePos] = Math.min(beadPos, actives[polePos] === beadPos ? (beadPos > 1 ? beadPos - 1 : 0) : beadPos);
+
+            // Call the "addActives" function
             addActives();
         });
     });
 });
 
+// Define the "addActives" function
 function addActives() {
+    // Remove the "active" class from all elements with class "bead" and class "active"
     document.querySelectorAll(".bead.active").forEach(bead => bead.classList.remove("active"));
 
+    // Initialize a "total" variable
     let total = 0;
+
+    // Loop through the "actives" array
     actives.forEach((value, pow10) => {
+        // Update the "total" variable by adding 10 raised to the power of "pow10" multiplied by "value"
         total += 10 ** pow10 * value;
+
+        // If the current "value" is greater than 0
         if (value > 0) {
+            // Find the element with class "bead" and matching "data-pole-num" and "data-bead-num" attributes, and add the "active" class to it
             document
                 .querySelector(`.bead[data-pole-num="${pow10}"][data-bead-num="${value}"]`)
                 .classList.add("active");
         }
     });
+
+    // Update the inner HTML of the element with ID "total" to the value of "
     document.querySelector("#total").innerHTML = total.toLocaleString();
 }
