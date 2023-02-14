@@ -1,42 +1,38 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: gray;
-    /* background-image: url("https://27mi124bz6zg1hqy6n192jkb-wpengine.netdna-ssl.com/wp-content/uploads/2020/05/Classroom-Management-for-an-Effective-Learning-Environment-768x512.jpg"); */
-    /* background-size: cover; */
-    /* background-position: center center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(83, 83, 83);
+  background-image: url("https://27mi124bz6zg1hqy6n192jkb-wpengine.netdna-ssl.com/wp-content/uploads/2020/05/Classroom-Management-for-an-Effective-Learning-Environment-768x512.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 #total {
-    font-family: monospace;
-    font-size: 4em;
-    color: white;
-    text-shadow: 0 0 2px black;
+  font-family: monospace;
+  font-size: 4em;
+  color: white;
+  text-shadow: 0 0 2px black;
     transform: rotate3d(0, 0, 0, 45deg);
 }
-
 #abacus {
-    display: flex;
+  display: flex;
 }
 
-.support:first-child {
-    --direction: to right;
+.stander:first-child {
+  --direction: to right;
 }
-
-.support:last-child {
-    --direction: to left;
+.stander:last-child {
+  --direction: to left;
 }
-
-.support {
+.stander {
     width: 35px;
     border-radius: 100px 100px 5px 5px;
     height: 550px;
@@ -46,96 +42,76 @@ body {
     outline: 1px solid #5c5c5c;
     position: relative;
 }
-
-.support:before {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 50px;
-    bottom: 2px;
-    left: 86%;
-    transform: skew(-40deg, 10deg);
-    z-index: -1;
-    border-radius: 100px 100px 5px 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    filter: blur(2px);
+.stander:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 25%);
+  z-index: -1;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(2px);
 }
-
-#poles {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /*
-    height: 500px;
-    width: 500px;
-    */
-    height: 52vh;
-    width: 50vw;
+#rods {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
 }
-
-.pole:nth-child(1) {
-    --color: rgb(12, 100, 182);
-}
-
-.pole:nth-child(2) {
-    --color: rgb(208 33 33)
-}
-
-.pole:nth-child(3) {
-    --color: rgb(210, 207, 16);
-}
-
-.pole:nth-child(4) {
+.rod:nth-child(1) {
     --color: rgb(31, 131, 36);
 }
-
-.pole:nth-child(5) {
-    --color: rgb(98, 6, 202);
+.rod:nth-child(2) {
+  --color: rgb(210, 207, 16);
 }
-
-.pole:nth-child(6) {
-    --color: rgb(251, 110, 0);
+.rod:nth-child(3) {
+  --color: rgb(208, 33, 33);
 }
-
-.pole:nth-child(7) {
-    --color: rgb(245, 59, 250);
+.rod:nth-child(4) {
+  --color: rgb(12, 100, 182);
 }
-
-.pole:nth-child(8) {
-    --color: rgb(81, 204, 9);
+.rod:nth-child(5) {
+  --color: #664dcd;
 }
-
-.pole:nth-child(9) {
-    --color: rgb(131, 69, 252);
+.rod:nth-child(6) {
+  --color: #d94e41;
 }
-
-.pole:nth-child(10) {
-    --color: rgb(4, 41, 202);
+.rod:nth-child(7) {
+    --color: rgb(31, 131, 36);
 }
-
-.pole {
-    display: flex;
-    flex: 1;
-    background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0) 40%,
-            var(--color) 40%,
-            white 45%,
-            var(--color) 53%,
-            rgba(0, 0, 0, 0.7) 59%,
-            var(--color) 60%,
-            rgba(0, 0, 0, 0) 60%
-    );
-    /* background-color: blue; */
-    align-items: center;
-    filter: drop-shadow(0px 0px 1px black);
-    padding: 0 3px;
-    max-height: 125px;
+.rod:nth-child(8) {
+    --color: rgb(210, 207, 16);
+}
+.rod:nth-child(9) {
+  --color: rgb(208, 33, 33);
+}
+.rod:nth-child(10) {
+  --color: rgb(12, 100, 182);
+}
+.rod {
+  display: flex;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 40%,
+    var(--color) 40%,
+    white 42%,
+    var(--color) 50%,
+    rgba(0, 0, 0, 0.7) 59%,
+    var(--color) 60%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  /* background-color: blue; */
+  align-items: center;
+  padding: 0 5px;
 }
 
 .bead {
-    width: 5%;
-    height: 70%;
+  width: 5%;
+  height: 70%;
     background: linear-gradient(
             to bottom,
             var(--color) 0%,
@@ -143,15 +119,12 @@ body {
             var(--color) 56%,
             var(--color) 53%
     );
-    border-radius: 20%;
-    box-shadow: inset 0 -10px 10px -10px #000000,
+  border-radius: 20%;
+  box-shadow: inset 0 -10px 10px -10px #000000,
     inset 0 0 2px rgba(0, 0, 0, 0.5);
-    filter: drop-shadow(0px 0px 1px black);
-    margin-left: 0;
-    transition: margin 500ms;
+  margin-left: 0;
 }
 
 .bead.active {
-    /*margin-left: auto;*/
-    margin-left: 50%;
+  margin-left: auto;
 }
