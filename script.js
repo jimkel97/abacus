@@ -68,3 +68,9 @@ function addActives() {
     // Update the inner HTML of the element with ID "total" to the value of "
     document.querySelector("#total").innerHTML = total.toLocaleString();
 }
+
+// Play click sound every time a bead is moved
+function play() {
+  var audio = document.getElementById("audio");
+  audio.play();
+}

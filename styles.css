@@ -70,7 +70,7 @@ body {
     width: 500px;
     */
     height: 52vh;
-    width: 50vw;
+    width: 75vw;
 }
 
 .pole:nth-child(1) {
@@ -134,7 +134,7 @@ body {
 }
 
 .bead {
-    width: 5%;
+    width: 8%;
     height: 70%;
     background: linear-gradient(
             to bottom,
@@ -153,5 +153,5 @@ body {
 
 .bead.active {
     /*margin-left: auto;*/
-    margin-left: 50%;
+    margin-left: 20%;
 }
