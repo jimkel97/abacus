@@ -3,7 +3,6 @@ const actives = new Array(rods.length);
 
 const allbeads = document.getElementsByClassName("bead");
 
-
 for (let i = 0; i < allbeads.length; i++) {
     allbeads[i].setAttribute("tabindex", "0");
 }
