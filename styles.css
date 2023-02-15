@@ -63,10 +63,10 @@ body {
 .stander:nth-child(1):after {
     content: "";
     position: absolute;
-    width: 516px;
+    width: 509px;
     height: 20px;
     bottom: 20px;
-    left: 164%;
+    left: 166%;
     transform: skew(-40deg, 0deg);
     z-index: -1;
     background-color: rgba(0, 0, 0, 0.5);

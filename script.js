@@ -1,12 +1,18 @@
 const rods = document.querySelectorAll(".rod");
 const actives = new Array(rods.length);
 
+const allbeads = document.getElementsByClassName("bead");
+for (let i=0; i<allbeads.length; i++) {
+    allbeads[i].setAttribute("tabindex", "0");
+}
+
 rods.forEach((rod, index_row) => {
     const beads = rod.querySelectorAll(".bead");
     beads.forEach((bead, index_bead) => {
         bead.setAttribute("data-pow10", rods.length - index_row - 1);
         bead.setAttribute("data-value", beads.length - index_bead);
-        bead.addEventListener("click", () => {
+
+        ['click', 'keypress'].forEach(evt => bead.addEventListener(evt, () => {
             bead_power = bead.getAttribute("data-pow10");
             bead_value = bead.getAttribute("data-value");
             if (actives[bead_power] == bead_value) {
@@ -21,7 +27,8 @@ rods.forEach((rod, index_row) => {
                 actives[bead_power] = parseInt(bead_value);
             }
             addActives();
-        });
+            play();
+        }));
     });
 });
 
