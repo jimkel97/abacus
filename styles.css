@@ -76,6 +76,7 @@ body {
 #rods {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     height: 500px;
     width: 500px;
 }
@@ -136,6 +137,7 @@ body {
     /* background-color: blue; */
     align-items: center;
     padding: 0 5px;
+    max-height: 10vh;
 }
 
 .bead {
