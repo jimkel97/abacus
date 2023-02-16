@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*background-color: rgb(101 101 101);*/
+    background-color: transparent;
+    background-size: cover;
+    background-position: center center;
+    #abacus {
+        display: flex;
+        .stander {
+            width: 35px;
+            border-radius: 100px 100px 5px 5px;
+            height: 550px;
+            background: linear-gradient(
+            var(--direction),
+            #C1986B, #B28B5C, #A37C4D, #D0A97A);
+            outline: 1px solid #5c5c5c;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 50px;
+                bottom: 2px;
+                left: 86%;
+                transform: skew(-40deg, 10deg);
+                z-index: -1;
+                border-radius: 100px 100px 5px 5px;
+                background-color: rgba(0, 0, 0, 0.5);
+                filter: blur(2px);
+            }
+            &:first-child {
+                --direction: to right;
+            }
+            &:last-child {
+                --direction: to left;
+            }
+            &:nth-child(1):after {
+                content: "";
+                position: absolute;
+                width: 509px;
+                height: 20px;
+                bottom: 20px;
+                left: 167%;
+                transform: skew(-40deg, 0deg);
+                z-index: -1;
+                background-color: rgba(0, 0, 0, 0.5);
+                filter: blur(2px);
+            }
+        }
+        #rods {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 500px;
+            width: 500px;
+            .rod {
+                display: flex;
+                flex: 1;
+                background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 33%,
+                var(--color) 40%,
+                #ffffffab 41%,
+                var(--color) 48%,
+                rgb(53 53 53 / 70%) 59%,
+                var(--color) 60%,
+                rgba(0, 0, 0, 0) 60%
+                );
+                /* background-color: blue; */
+                align-items: center;
+                padding: 0 5px;
+                max-height: 10vh;
+                &:nth-child(1) {
+                    --color: rgb(31, 131, 36);
+                }
+
+                &:nth-child(2) {
+                    --color: rgb(210, 207, 16);
+                }
+
+                &:nth-child(3) {
+                    --color: rgb(208, 33, 33);
+                }
+
+                &:nth-child(4) {
+                    --color: rgb(12, 100, 182);
+                }
+
+                &:nth-child(5) {
+                    --color: #664dcd;
+                }
+
+                &:nth-child(6) {
+                    --color: #d94e41;
+                }
+
+                &:nth-child(7) {
+                    --color: rgb(31, 131, 36);
+                }
+
+                &:nth-child(8) {
+                    --color: rgb(210, 207, 16);
+                }
+
+                &:nth-child(9) {
+                    --color: rgb(208, 33, 33);
+                }
+
+                &:nth-child(10) {
+                    --color: rgb(12, 100, 182);
+                }
+                .bead {
+                    width: 5%;
+                    height: 70%;
+                    background: linear-gradient(
+                    to bottom,
+                    var(--color) 0%,
+                    white 20%,
+                    var(--color) 56%,
+                    var(--color) 53%
+                    );
+                    border-radius: 20%;
+                    box-shadow: inset 0 -10px 10px -10px #000000,
+                    inset 0 0 2px rgba(0, 0, 0, 0.5);
+                    margin-left: 0;
+                    &.active {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+        #total {
+            font-family: monospace;
+            font-size: 4em;
+            color: white;
+            transform: rotate3d(0, 0, 0, 45deg);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
