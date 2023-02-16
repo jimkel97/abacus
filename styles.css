@@ -10,7 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgb(101 101 101);
+    /*background-color: rgb(101 101 101);*/
+    background-color: transparent;
     background-size: cover;
     background-position: center center;
 }
@@ -19,8 +20,9 @@ body {
     font-family: monospace;
     font-size: 4em;
     color: white;
-    text-shadow: 0 0 2px black;
     transform: rotate3d(0, 0, 0, 45deg);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 #abacus {
@@ -65,7 +67,7 @@ body {
     width: 509px;
     height: 20px;
     bottom: 20px;
-    left: 166%;
+    left: 167%;
     transform: skew(-40deg, 0deg);
     z-index: -1;
     background-color: rgba(0, 0, 0, 0.5);
